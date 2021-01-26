@@ -1,38 +1,14 @@
-# Analysis of the Global Covid-19 Vaccination Progress
+# Global Covid-19 Vaccination Progress
 
-This Project analyzes the progress of covid vaccination in different countries by investigation the [COVID-19 World Vaccination Progress Dataset](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) from [Our World Data](https://ourworldindata.org/).
+Countries all over the world face difficult challenges during their fight agains further Covid-19 spreading and try to protect their citizens as much as possible.
+The currently released vaccines are the new hope in order to defeat the virus and every country is trying to vaccinate as much people as possible in the shortest time.
+This strategy brings new challenges with huge efforts needed in logistics and organisation. A race for vaccines has started between nations and million of people need to get vaccinated while prioritzing the risk groups.
+But which countries are doing best compared globally? What influences the number of people that can get vaccinated daily? And do wealthy nations have easier access to the vaccines than others? These questions will be answered below.
+
+The blog analyzes the progress of covid vaccination in different countries by investigation the [COVID-19 World Vaccination Progress Dataset](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) from [Our World Data](https://ourworldindata.org/).
 The data is enriched with [GDP per Capita Information](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) provided by the world bank and [country population information](https://population.un.org/wpp/Download/Standard/CSV/) provided by the United Nations.
-The enriched data allows insights into the demographic and economic situations of the analysed countries and their progress on vaccinating their citizens.
+The enriched dataset allows insights into the demographic and economic situations of the analysed countries and their progress on vaccinating their citizens.
 The data is being transformed to optimize the analytical insights.
-
-The notebook is structured as followed:
-
-* **Data Cleaning and Merging**: Reading and merging the collected datasets
-    * Drop unused columns
-    * Clean columns with missing values
-    * Transform categorical values
-    
-    
-* **Exploratory Data Analysis**: Deliver insights into the data by analysing the following questions:
-    * Recent Daily Vaccinations per million citizens per country
-    * US Daily Vaccination Rate
-    * Association between GDP per Capita and percent of vaccinated citizens
-    * Association between population size and percent of vaccinated citizens
-    * Regression Coefficients for population size, GDP per Capita and population density
-    * Vaccines Analysis: Are there vaccines mainly accessible for countries with a high GDP per Capita?
-	
-## Environment
-
-* python 3.6
-* pandas 1.0.5
-* numpy 1.18.5
-* matplotlib 3.2.2
-* seaborn 0.11.1
-* sklearn 0.23.1
-
-## How to run the analysis
-
-The notebook [EDA_Covid_Vaccination.ipynb](EDA_Covid_Vaccination.ipynb) contains the ETL and Analysis process.
 
 ## Results
 
