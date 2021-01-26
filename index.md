@@ -1,37 +1,53 @@
-## Welcome to GitHub Pages
+# Analysis of the Global Covid-19 Vaccination Progress
 
-You can use the [editor on GitHub](https://github.com/Marcbaer/covid19_vaccination.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This Project analyzes the progress of covid vaccination in different countries by investigation the [COVID-19 World Vaccination Progress Dataset](https://www.kaggle.com/gpreda/covid-world-vaccination-progress) from [Our World Data](https://ourworldindata.org/).
+The data is enriched with [GDP per Capita Information](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) provided by the world bank and [country population information](https://population.un.org/wpp/Download/Standard/CSV/) provided by the United Nations.
+The enriched data allows insights into the demographic and economic situations of the analysed countries and their progress on vaccinating their citizens.
+The data is being transformed to optimize the analytical insights.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The notebook is structured as followed:
 
-### Markdown
+* **Data Cleaning and Merging**: Reading and merging the collected datasets
+    * Drop unused columns
+    * Clean columns with missing values
+    * Transform categorical values
+    
+    
+* **Exploratory Data Analysis**: Deliver insights into the data by analysing the following questions:
+    * Recent Daily Vaccinations per million citizens per country
+    * US Daily Vaccination Rate
+    * Association between GDP per Capita and percent of vaccinated citizens
+    * Association between population size and percent of vaccinated citizens
+    * Regression Coefficients for population size, GDP per Capita and population density
+    * Vaccines Analysis: Are there vaccines mainly accessible for countries with a high GDP per Capita?
+	
+## Environment
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* python 3.6
+* pandas 1.0.5
+* numpy 1.18.5
+* matplotlib 3.2.2
+* seaborn 0.11.1
+* sklearn 0.23.1
 
-```markdown
-Syntax highlighted code block
+## How to run the analysis
 
-# Header 1
-## Header 2
-### Header 3
+The notebook [EDA_Covid_Vaccination.ipynb](EDA_Covid_Vaccination.ipynb) contains the ETL and Analysis process.
 
-- Bulleted
-- List
+## Results
 
-1. Numbered
-2. List
+**Association between GDP per Capita and percent of vaccinated citizens**
+<img src="GDP_vs_PercVacc.png">
 
-**Bold** and _Italic_ and `Code` text
+**Association between population size and percent of vaccinated citizens**
+<img src="PopSize_vs_PercVacc.png">
 
-[Link](url) and ![Image](src)
-```
+**Regression Coefficients for population size, GDP per Capita and population density**
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Running a linear regression for total percentage of vaccinated citizens resulted in the following coefficients:
+* **Population Size: (Negative)** -1.63475623e-06
+* **GDP per Capita: (Positive)** 2.32138617e-05
+* **Population Density: (Positive)** 2.81426369e-04
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Marcbaer/covid19_vaccination.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**Vaccines Analysis: Are there vaccines mainly accessible for countries with a high GDP per Capita?**
+<img src="Vacc_plot.png">
